@@ -1,3 +1,6 @@
+REPO_DIR_API=$(pwd)
+#REPO_DIR_API=$(pwd)
+#REPO_DIR_API=$(pwd)
 #!/bin/bash
 
 echo "[INFO] MySQL zaxira jarayoni boshlanyapti..."
@@ -6,7 +9,7 @@ now=$(date +%Y-%m-%d_%H-%M-%S)
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 
 # === REPO_DIR_API aniqlash ===
-REPO_DIR_API="$(dirname "$SCRIPT_DIR")"
+#REPO_DIR_API="$(dirname "$SCRIPT_DIR")"
 ENV_FILE="$REPO_DIR_API/.env"
 
 # === .env yuklash ===
