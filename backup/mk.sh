@@ -1,6 +1,3 @@
-REPO_DIR_API=$(pwd)
-#REPO_DIR_API=$(pwd)
-#REPO_DIR_API=$(pwd)
 #!/bin/bash
 
 echo "[INFO] MySQL zaxira jarayoni boshlanyapti..."
@@ -23,8 +20,7 @@ export $(grep -v '^#' "$ENV_FILE" | xargs)
 # === O'zgaruvchilar ===
 PROJECT_NAME=${DOCKER_PROJECT_NAME}
 DB_NAME=${DOCKER_PROJECT_NAME}
-MYSQL_USER=${DB_USERNAME}
-MYSQL_PASSWORD=${DB_PASSWORD}
+MYSQL_PASSWORD=${DATABASE_PASSWORD}
 DOCKERFILE="$REPO_DIR_API/docker-compose.yml"
 
 BACKUP_DIR="$REPO_DIR_API/backup"
@@ -32,7 +28,7 @@ SQL_FILE="$BACKUP_DIR/$PROJECT_NAME-$now.sql"
 ARCHIVE_FILE="$BACKUP_DIR/$PROJECT_NAME-$now.tar.gz"
 
 # === MySQL zaxiralash ===
-docker compose -f "$DOCKERFILE" exec mysql sh -c "mysqldump -u$MYSQL_USER -p$MYSQL_PASSWORD $DB_NAME" > "$SQL_FILE"
+docker compose -f "$DOCKERFILE" exec mysql sh -c "mysqldump -uroot -p$MYSQL_PASSWORD $DB_NAME" > "$SQL_FILE"
 
 if [ $? -ne 0 ]; then
     echo "[XATO] Zaxiralashda muammo bo‘ldi."

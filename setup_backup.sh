@@ -4,7 +4,7 @@
 SOURCE_FILE="./backup/mk.sh"
 TARGET_DIR="/home/backup"
 ENV_FILE=".env"
-REPO_VAR_LINE='REPO_DIR_API=$(pwd)'
+REPO_VAR_LINE="REPO_DIR_API=$(pwd)"
 
 # === PROJECT_NAME ni aniqlash ===
 if [ -f "$ENV_FILE" ]; then
