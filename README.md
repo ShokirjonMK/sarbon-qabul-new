@@ -14,6 +14,7 @@
 
 
 ```docker compose exec php bash```
+
 ```php init```
 
 =====================
