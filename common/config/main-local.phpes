@@ -4,9 +4,10 @@ return [
     'components' => [
         'db' => [
             'class' => \yii\db\Connection::class,
-            'dsn' => 'mysql:host=mysql;dbname=ZARMEDqabul',
-            'username' => 'root',
-            'password' => 'mksarsontvQbull',
+            'dsn' => 'mysql:host=mysql;dbname=' . env('DOCKER_PROJECT_NAME'),
+            'dsn' => env('DB_DSN'),
+            'username' => env('DB_USERNAME'),
+            'password' => env('DB_PASSWORD'),
             'charset' => 'utf8',
         ],
         'mailer' => [
