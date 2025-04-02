@@ -1,3 +1,5 @@
+REPO_DIR_API="/home/dev-1/apps/sarbon/sarbon-qabul-new"
+#REPO_DIR_API="/home/dev-1/apps/sarbon/sarbon-qabul-new"
 #!/bin/bash
 
 echo "[INFO] MySQL zaxira jarayoni boshlanyapti..."
