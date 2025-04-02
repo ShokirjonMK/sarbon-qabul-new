@@ -46,10 +46,16 @@ if [ ! -d "$TARGET_DIR" ]; then
     mkdir -p "$TARGET_DIR"
 fi
 
-# 5. Faylni yangi joyga nusxalash
+# 5. Faylni yangi joyga replace qilish
+if [ -f "$TARGET_FILE" ]; then
+    echo "[INFO] Eski $TARGET_FILE fayli o‘chirilmoqda..."
+    rm -f "$TARGET_FILE"
+fi
+
 cp "$SOURCE_FILE" "$TARGET_FILE"
 chmod +x "$TARGET_FILE"
-echo "[INFO] $TARGET_FILE bajariladigan qilindi."
+echo "[INFO] $TARGET_FILE yangi nusxa bilan yangilandi va bajariladigan qilindi."
+
 
 # 6. Yangi skriptni ishga tushurish
 echo "[INFO] Backup skripti ishga tushirilmoqda..."

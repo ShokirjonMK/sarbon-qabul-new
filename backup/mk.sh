@@ -33,10 +33,10 @@ TAR_FILE_API="$REPO_DIR_API/backup/$PROJECT_NAME-$now.tar.gz"
 echo "Docker orqali zaxiralash boshlandi..."
 
 # 1. Faqat uchta jadvalni (exam_student, exam_student_answer, exam_atudent_answer_sub_question) backup qilish
-mysqldump -u "$MYSQL_USER" -p"$MYSQL_PASSWORD" --single-transaction --quick --skip-lock-tables \
-    "$DB_DATABASE" >"$OUTPUT_FILE_API"
+# mysqldump -u "$MYSQL_USER" -p"$MYSQL_PASSWORD" --single-transaction --quick --skip-lock-tables \
+#     "$DB_DATABASE" >"$OUTPUT_FILE_API"
 
-# docker compose -f $DOCKERFILE_API exec mysql sh -c "mysqldump -uroot -p$DB_PASS_API $DB_NAME_API" >$OUTPUT_FILE_API
+docker compose -f $DOCKERFILE_API exec mysql sh -c "mysqldump -uroot -p$DB_PASS_API $DB_NAME_API" >$OUTPUT_FILE_API
 
 if [ $? -eq 0 ]; then
     echo "Zaxira muvaffaqiyatli olindi: $OUTPUT_FILE_API"
