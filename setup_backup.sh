@@ -3,14 +3,24 @@
 # 1. O'zgaruvchilar
 SOURCE_FILE="./backup/mk.sh"
 TARGET_DIR="/home/backup"
+ENV_FILE=".env"
 
 REPO_VAR_LINE='REPO_DIR_API=$(pwd)'
 PROJECT_NAME=$(grep '^DOCKER_PROJECT_NAME=' "$ENV_FILE" | cut -d '=' -f2)
 
-if [ -z "$PROJECT_NAME" ]; then
-    echo "[XATO] .env faylida DOCKER_PROJECT_NAME topilmadi yoki bo‘sh."
-    exit 1
+# 1. .env dan PROJECT_NAME olish yoki fallback
+if [ -f "$ENV_FILE" ]; then
+    PROJECT_NAME=$(grep '^DOCKER_PROJECT_NAME=' "$ENV_FILE" | cut -d '=' -f2)
 fi
+
+# Agar .env yo‘q yoki qiymat bo‘sh bo‘lsa — papka nomini ol
+if [ -z "$PROJECT_NAME" ]; then
+    PROJECT_NAME=$(basename "$(pwd)")
+    echo "[INFO] .env dan topilmadi. Joriy katalog nomi asosida PROJECT_NAME: $PROJECT_NAME"
+else
+    echo "[INFO] .env faylidan PROJECT_NAME olindi: $PROJECT_NAME"
+fi
+
 
 TARGET_FILE="$TARGET_DIR/$PROJECT_NAME.sh"
 
