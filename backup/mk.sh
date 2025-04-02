@@ -35,7 +35,7 @@ echo "Docker orqali zaxiralash boshlandi..."
 # mysqldump -u "$MYSQL_USER" -p"$MYSQL_PASSWORD" --single-transaction --quick --skip-lock-tables \
 #     "$DB_DATABASE" >"$OUTPUT_FILE_API"
 
-docker compose -f $DOCKERFILE_API exec mysql sh -c "mysqldump -uroot -p$DB_PASS_API $DB_NAME_API" >$OUTPUT_FILE_API
+docker compose -f $DOCKERFILE_API exec mysql sh -c "mysqldump -uroot -p$MYSQL_PASSWORD $DB_NAME_API" >$OUTPUT_FILE_API
 
 if [ $? -eq 0 ]; then
     echo "Zaxira muvaffaqiyatli olindi: $OUTPUT_FILE_API"
