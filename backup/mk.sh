@@ -19,7 +19,7 @@ else
 fi
 
 # Oldindan belgilangan qiymatlar
-PROJECT_NAME="sarbonqabulNew"
+PROJECT_NAME=${DOCKER_PROJECT_NAME}
 DOCKERFILE_API="$REPO_DIR_API/docker-compose.yml"
 DB_NAME_API=${DOCKER_PROJECT_NAME}
 MYSQL_PASSWORD=${DB_PASSWORD}
