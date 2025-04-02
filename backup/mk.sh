@@ -42,8 +42,8 @@ tar -czf "$ARCHIVE_FILE" "$SQL_FILE" && rm "$SQL_FILE"
 echo "[INFO] Fayl siqildi: $ARCHIVE_FILE"
 
 # === Telegramga yuborish ===
-API_TOKEN="BOT_TOKEN_HERE"
-CHAT_ID="YOUR_CHAT_ID"
+API_TOKEN=${TELEGRAM_BOT_TOKEN}
+CHAT_ID=${TELEGRAM_CHAT_ID}
 
 FILE_SIZE=$(du -m "$ARCHIVE_FILE" | cut -f1)
 
