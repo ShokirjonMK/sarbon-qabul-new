@@ -19,7 +19,7 @@ export $(grep -v '^#' "$ENV_FILE" | xargs)
 
 # === O'zgaruvchilar ===
 PROJECT_NAME=${DOCKER_PROJECT_NAME}
-DB_NAME=${DB_DATABASE}
+DB_NAME=${DOCKER_PROJECT_NAME}
 MYSQL_USER=${DB_USERNAME}
 MYSQL_PASSWORD=${DB_PASSWORD}
 DOCKERFILE="$REPO_DIR_API/docker-compose.yml"
