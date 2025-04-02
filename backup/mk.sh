@@ -1,3 +1,4 @@
+REPO_DIR_API=$(pwd)
 #!/bin/bash
 
 echo "MySQL ma'lumotlar bazasining zaxirasi olinmoqda..."
@@ -7,7 +8,7 @@ now=$(date +%Y-%m-%d_%H-%M-%S)
 
 # Skriptning turgan joyini topish
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
-REPO_DIR_API="$(dirname "$SCRIPT_DIR")"
+#REPO_DIR_API="$(dirname "$SCRIPT_DIR")"
 
 # .env faylini yuklash
 ENV_FILE="$REPO_DIR_API/.env"
