@@ -1,3 +1,5 @@
+REPO_DIR_API=$(pwd)
+#REPO_DIR_API=$(pwd)
 #!/bin/bash
 
 echo "MySQL ma'lumotlar bazasining zaxirasi olinmoqda..."
