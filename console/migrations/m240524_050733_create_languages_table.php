@@ -40,7 +40,7 @@ class m240524_050733_create_languages_table extends Migration
         ], $tableOptions);
 
         $this->insert('{{%languages}}', [
-            'name_uz' => 'O`zbek',
+            'name_uz' => 'O‘zbek',
             'name_ru' => 'Узбекский',
             'name_en' => 'Uzbek',
             'status' => 1,

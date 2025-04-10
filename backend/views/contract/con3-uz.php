@@ -1066,7 +1066,7 @@ $limg = $lqr->writeDataUri();
 
                     <tr>
                         <td colspan="2" style="vertical-align: top">
-                            <b>“ZARMED UNIVERSITETI” oliy ta’lim tashkiloti</b> <br>
+                            <b>“SARBON UNIVERSITETI” oliy ta’lim tashkiloti</b> <br>
                             <b>Manzil:</b> Toshkent shahri, Yunusobod tumani, Posira MFY, Bog'ishamol ko'chasi, 220-uy <br>
                             <b>H/R:</b> <?= $cons->h_r ?> <br>
                             <b>Bank:</b> “KAPITALBANK” ATB Sirg’ali filiali <br>
@@ -1226,7 +1226,7 @@ $limg = $lqr->writeDataUri();
                         <table width="100%" style="border-collapse: collapse; border: 1px solid;">
                             <tr>
                                 <td colspan="2" style="padding: 5px; border: 1px solid;"><b>Qabul qiluvchi tashkilot nomi:</b></td>
-                                <td colspan="2" style="padding: 5px; border: 1px solid;"><b>ZARMED UNIVERSITY” MCHJ</b></td>
+                                <td colspan="2" style="padding: 5px; border: 1px solid;"><b>"SARBON UNIVERSITETI" MCHJ</b></td>
                             </tr>
 
                             <tr>

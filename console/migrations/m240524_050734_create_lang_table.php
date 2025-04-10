@@ -26,7 +26,7 @@ class m240524_050734_create_lang_table extends Migration
             'is_deleted' => $this->tinyInteger()->defaultValue(0),
         ]);
         $this->insert('{{%lang}}', [
-            'name_uz' => 'O`zbek',
+            'name_uz' => 'O‘zbek',
             'name_ru' => 'Узбекский',
             'name_en' => 'Uzbek',
             'status' => 1,

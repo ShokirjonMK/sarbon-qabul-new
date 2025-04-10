@@ -148,7 +148,7 @@ $limg = $lqr->writeDataUri();
             <table width="100%" style="font-family: 'Times New Roman'; border-bottom: 2px solid #000000; padding-bottom: 5px; font-size: 14px; border-collapse: collapse;">
                 <tr>
                     <td colspan="2">
-                        <b>ZARMED UNIVERSITETI</b>
+                        <b>SARBON UNIVERSITETI</b>
                     </td>
                     <td colspan="2" style="font-style: italic; font-size: 11px; text-align: right;">
                         <?= $date ?>
@@ -191,7 +191,7 @@ $limg = $lqr->writeDataUri();
             2017-yil 20-iyundagi 393-son qarori, O‘zbekiston Respublikasi oliy va o‘rta maxsus ta’lim vazirining
             2012-yil 28-dekabrdagi 508-son buyrug‘i (ro‘yxat raqami 2431, 2013-yil 26-fevral) bilan tasdiqlangan
             Oliy va o‘rta maxsus, kasb-hunar ta’limi muassasalarida o‘qitishning to‘lov-shartnoma shakli va undan
-            tushgan mablag‘larni taqsimlash tartibi to‘g‘risidagi Nizomga muvofiq birinchi tomondan -  <b>ZARMED UNIVERSITETI</b>
+            tushgan mablag‘larni taqsimlash tartibi to‘g‘risidagi Nizomga muvofiq birinchi tomondan -  <b>SARBON UNIVERSITETI</b>
             oliy ta’lim tashkiloti (keyingi o‘rinlarda “Ta’lim muassasasi”) nomidan Ustav asosida ish yurituvchi direktor
             <b>SOBIRJONOV NODIRJON QODIRJONOVICH</b>, ikkinchi tomondan - _________________________________________
             (keyingi o‘rinlarda “Buyurtmachi”) nomidan _________________________________________ uchinchi tomondan -
@@ -204,7 +204,7 @@ $limg = $lqr->writeDataUri();
             от 28 декабря 2012 года № 508 (регистрационный номер 2431 от 26 февраля 2013 года),
             утвержденным Порядком установления контрактов на обучение в высших и средних специальных,
             профессиональных учебных заведениях и распределения полученных средств, между Высшим образовательным
-            учреждением <b>ZARMED UNIVERSITETI</b> (в дальнейшем именуемое “Образовательное учреждение”), в лице
+            учреждением <b>SARBON UNIVERSITETI</b> (в дальнейшем именуемое “Образовательное учреждение”), в лице
             директора <b>SOBIRJONOV NODIRJON QODIRJONOVICH</b>, действующего на основании Устава с одной стороны, и от имени Заказчика
             _________________________________________ действующего на основании _________________________________________
             с другой стороны, и _________________________________________ (в дальнейшем именуемый “Обучающийся”), с третьей стороны, далее совместно именуемые
@@ -758,7 +758,7 @@ $limg = $lqr->writeDataUri();
 
     <tr>
         <td colspan="2" style="text-align: justify; vertical-align: top; border: 1px solid #000; ">
-            7.1 Ta’lim muassasasi: <b>ZARMED UNIVERSITETI</b> <br>
+            7.1 Ta’lim muassasasi: <b>SARBON UNIVERSITETI</b> <br>
             <b>Manzil:</b> Toshkent shahar, Olmazor tumani, Paxta
             MFY, Sag'bon ko'chasi, 290-uy. <br>
             Bank rekvizitlari:<br>
@@ -771,7 +771,7 @@ $limg = $lqr->writeDataUri();
             <img src="<?= $img ?>" width="120px">
         </td>
         <td colspan="2" style="text-align: justify; vertical-align: top; border: 1px solid #000; ">
-            7.1. Образовательное учреждение: <b>ZARMED UNIVERSITETI</b> <br>
+            7.1. Образовательное учреждение: <b>SARBON UNIVERSITETI</b> <br>
             <b>Адрес: </b> г. Ташкент, район Олмазор, махалля Пахта, ул. Сагбон, дом 290. <br>
             Банковские реквизиты:<br>
             <b>Расчетный счет: </b> <?= $hr ?> <br>

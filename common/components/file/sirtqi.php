@@ -228,8 +228,8 @@ $limg = $lqr->writeDataUri();
 
     <tr>
         <td colspan="4" style="text-align: justify;">
-            2.5. Har bir oila(ota,ona, farzandlari va ularning turmush o’rtoqlari ) dan kamida 2 nafar abituriyentlar universitetda o’qish istagini bildirib, kirish imtihonlarini muvaffaqiyatli topshirib talabalikka tavsiya qilinganda mazkur oilaning har bir a’zosiga “KATTA OILA” granti taqdim qilinadi, ya’ni har o’quv yili uchun to’lov-kontrakt summasining 10 foizi miqdorida chegirmalar  beriladi. “ZARMED”  MCHJ xodimlarining  farzandlariga  tabaqalashtirilgan  tartibda imtiozlar beriladi, bunda 5 yilgacha ish stajiga ega bo’lgan xodimlarning farzandlariga to’lov-kontrakt summasining
-            5 foizi, 5 yildan 10 yilgacha ish stajiga ega bo’lgan xodimlarning farzandlariga to’lov-kontrakt  summasining 10 foizi,  10 yildan  ortiq  ish stajiga  ega bo’lgan  xodimlarning  farzandlariga  to’lov-kontrakt  summasining  15 foizi miqdorida  chegirma  beriladi.  Shu  bilan  xodimlarning  nevaralari  ZARMED  universitetida  tahsil  olsa  20  foizi chegirma beriladi.
+            2.5. Har bir oila(ota,ona, farzandlari va ularning turmush o’rtoqlari ) dan kamida 2 nafar abituriyentlar universitetda o’qish istagini bildirib, kirish imtihonlarini muvaffaqiyatli topshirib talabalikka tavsiya qilinganda mazkur oilaning har bir a’zosiga “KATTA OILA” granti taqdim qilinadi, ya’ni har o’quv yili uchun to’lov-kontrakt summasining 10 foizi miqdorida chegirmalar  beriladi. "SARBON UNIVERSITETI" MCHJ xodimlarining  farzandlariga  tabaqalashtirilgan  tartibda imtiozlar beriladi, bunda 5 yilgacha ish stajiga ega bo’lgan xodimlarning farzandlariga to’lov-kontrakt summasining
+            5 foizi, 5 yildan 10 yilgacha ish stajiga ega bo’lgan xodimlarning farzandlariga to’lov-kontrakt  summasining 10 foizi,  10 yildan  ortiq  ish stajiga  ega bo’lgan  xodimlarning  farzandlariga  to’lov-kontrakt  summasining  15 foizi miqdorida  chegirma  beriladi.  Shu  bilan  xodimlarning  nevaralari  SARBON  universitetida  tahsil  olsa  20  foizi chegirma beriladi.
         </td>
     </tr>
 
