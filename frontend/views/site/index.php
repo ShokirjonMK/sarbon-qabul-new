@@ -31,7 +31,7 @@ $this->title = 'GLOBAL SOFTLINE UNIVERSITY';
             <div class="banner-logo">
                 <div class="circle">
                     <div class="logo">
-                        <img src="/frontend/web/images/sarbon_icon.svg" alt="">
+                        <img src="/frontend/web/images/logo_blue.svg" alt="">
                     </div>
                     <div class="circle-text">
                         <p>QABUL * SARBON * UNIVERSITY *</p>
