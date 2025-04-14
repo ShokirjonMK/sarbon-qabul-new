@@ -8,7 +8,9 @@ use common\models\Course;
 use Da\QrCode\QrCode;
 use frontend\models\Contract;
 use common\models\User;
-use common\models\Constalting;
+use common\models\Consulting;
+use common\models\StudentMaster;
+use common\models\Branch;
 
 /** @var Student $student */
 /** @var Direction $direction */
@@ -39,97 +41,76 @@ function   ikYearRu($number) {
     return "$years года и $months месяцев";
 }
 $user = $student->user;
-$cons = Constalting::findOne($user->cons_id);
-$direction = $student->direction;
+$cons = Consulting::findOne($user->cons_id);
+$eduDirection = $student->eduDirection;
+$direction = $eduDirection->direction;
 $full_name = $student->last_name.' '.$student->first_name.' '.$student->middle_name;
 $code = '';
 $joy = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
 $date = '';
 $link = '';
 $con2 = '';
-$startDate = strtotime('2024-09-20 00:00:00');
-$lastDate = strtotime('2024-09-30 00:00:00');
-
-$hr = $cons->h_r;
-$inn = '309341614';
-$mfo = '00491';
-$oked = '64190';
-$adresUz = '“Trastbank” xususiy aksiyadorlik bankining “Raqamli” bank xizmatlari ofisi';
-$adresRu = 'Частный акционерный банк “Трастбанк”, офис цифровых банковских услуг';
-
-$dCode = str_replace('.', '', $direction->code);
-$arrayCodes = [
-    0 => 60410100,
-    1 => 60410500,
-    2 => 60410600,
-    3 => 60410200,
-    4 => 60411200,
-    5 => 60410900,
-    6 => 60730100,
-    7 => 60730300,
-    8 => 60411100,
-    9 => 60420200,
-];
-if (in_array($dCode, $arrayCodes)) {
-    $hr = '2020 8000 4055 0277 8001';
-    $inn = '309 341 614';
-    $mfo = '01036';
-    $oked = '85420';
-    $adresUz = '«Ipak yoʻli bank» Sagʻbon filiali';
-    $adresRu = '«Ipak yoʻli bank» Сагбонский филиал';
-}
-
 if ($student->edu_type_id == 1) {
     $contract = Exam::findOne([
-        'direction_id' => $direction->id,
+        'edu_direction_id' => $eduDirection->id,
         'student_id' => $student->id,
         'status' => 3,
         'is_deleted' => 0
     ]);
-    $code = $cons->code.'Q3';
-    if ($contract->confirm_date > $lastDate) {
-        $contract->confirm_date = rand($startDate, $lastDate);
-    }
-    $date = date("Y-m-d H:i:s" , $contract->confirm_date);
-    $link = $contract->contract_link;
-    $con2 = $contract->contract_second;
+    $code = 'Q3/'.$cons->code.'/'.$contract->id;
+    $date = date("Y-m-d H:i" , $contract->confirm_date);
+    $link = '1&id='.$contract->id;
+    $con2 = '3'.$contract->invois;
     $contract->down_time = time();
     $contract->save(false);
 } elseif ($student->edu_type_id == 2) {
     $contract = StudentPerevot::findOne([
-        'direction_id' => $direction->id,
+        'edu_direction_id' => $eduDirection->id,
         'student_id' => $student->id,
         'file_status' => 2,
         'is_deleted' => 0
     ]);
-    $code = $cons->code.'P3';
-    if ($contract->confirm_date > $lastDate) {
-        $contract->confirm_date = rand($startDate, $lastDate);
-    }
-    $date = date("Y-m-d H:i:s" , $contract->confirm_date);
-    $link = $contract->contract_link;
-    $con2 = $contract->contract_second;
+    $code = 'P3/'.$cons->code.'/'.$contract->id;
+    $date = date("Y-m-d H:i" , $contract->confirm_date);
+    $link = '2&id='.$contract->id;
+    $con2 = '3'.$contract->invois;
     $contract->down_time = time();
     $contract->save(false);
 } elseif ($student->edu_type_id == 3) {
     $contract = StudentDtm::findOne([
-        'direction_id' => $direction->id,
+        'edu_direction_id' => $eduDirection->id,
         'student_id' => $student->id,
         'file_status' => 2,
         'is_deleted' => 0
     ]);
-    $code = $cons->code.'D3';
-    if ($contract->confirm_date > $lastDate) {
-        $contract->confirm_date = rand($startDate, $lastDate);
-    }
+    $code = 'D3/'.$cons->code.'/'.$contract->id;
     $date = date("Y-m-d H:i:s" , $contract->confirm_date);
-    $link = $contract->contract_link;
-    $con2 = $contract->contract_second;
+    $link = '3&id='.$contract->id;
+    $con2 = '3'.$contract->invois;
+    $contract->down_time = time();
+    $contract->save(false);
+} elseif ($student->edu_type_id == 4) {
+    $contract = StudentMaster::findOne([
+        'edu_direction_id' => $eduDirection->id,
+        'student_id' => $student->id,
+        'file_status' => 2,
+        'is_deleted' => 0
+    ]);
+    $code = 'M3/'.$cons->code.'/'.$contract->id;
+    $date = date("Y-m-d H:i:s" , $contract->confirm_date);
+    $link = '4&id='.$contract->id;
+    $con2 = '3'.$contract->invois;
     $contract->down_time = time();
     $contract->save(false);
 }
 
-$qr = (new QrCode('https://qabul.ZARMED.university/site/contract?key=' . $link.'&type=3'))
+$student->is_down = 1;
+$student->update(false);
+
+$filial = Branch::findOne($student->branch_id);
+
+
+$qr = (new QrCode('https://qabul.sarbon.university/site/contract?key=' . $link.'&type=3'))
     ->setSize(120, 120)
     ->setMargin(10)
     ->setForegroundColor(1, 89, 101);
@@ -257,14 +238,14 @@ $limg = $lqr->writeDataUri();
             Ta’lim shakli:
         </td>
         <td colspan="1" style="text-align: left; vertical-align: center; border: 1px solid #000;">
-            <b><?= $direction->eduForm->name_uz ?></b>
+            <b><?= $eduDirection->eduForm->name_uz ?></b>
         </td>
 
         <td colspan="1" style="text-align: left; vertical-align: center; border: 1px solid #000;">
             Форма обучения:
         </td>
         <td colspan="1" style="text-align: left; vertical-align: center; border: 1px solid #000;">
-            <b><?= $direction->eduForm->name_ru ?></b>
+            <b><?= $eduDirection->eduForm->name_ru ?></b>
         </td>
     </tr>
 
@@ -273,14 +254,14 @@ $limg = $lqr->writeDataUri();
             O‘qish muddati:
         </td>
         <td colspan="1" style="text-align: left; vertical-align: center; border: 1px solid #000;">
-            <b><?= ikYearUz($direction->edu_duration) ?></b>
+            <b><?= ikYearUz($eduDirection->duration) ?></b>
         </td>
 
         <td colspan="1" style="text-align: left; vertical-align: center; border: 1px solid #000;">
             Срок обучения:
         </td>
         <td colspan="1" style="text-align: left; vertical-align: center; border: 1px solid #000;">
-            <b><?= ikYearRu($direction->edu_duration) ?></b>
+            <b><?= ikYearRu($eduDirection->duration) ?></b>
         </td>
     </tr>
 
@@ -369,13 +350,13 @@ $limg = $lqr->writeDataUri();
     <tr>
         <td colspan="2" style="text-align: justify; vertical-align: top; border: 1px solid #000;">
             Choraklarga bo‘lib to‘langanda quyidagi muddatlarda: <br>
-            - belgilangan to‘lov miqdorining kamida 25.00 foizini talabalikka tavsiya etilgan abiturientlar uchun 01.12.2024 gacha, ikkinchi va undan yuqori bosqich talabalar uchun 01.12.2024 gacha; <br>
-            - belgilangan to‘lov miqdorining kamida 50.00 foizini 01.01.2025 gacha, 75.00 foizini 01.04.2025 gacha va 100.00 foizini 01.06.2025 gacha.
+            - belgilangan to‘lov miqdorining kamida 25.00 foizini talabalikka tavsiya etilgan abiturientlar uchun 01.12.2025 gacha, ikkinchi va undan yuqori bosqich talabalar uchun 01.12.2025 gacha; <br>
+            - belgilangan to‘lov miqdorining kamida 50.00 foizini 01.01.2026 gacha, 75.00 foizini 01.04.2026 gacha va 100.00 foizini 01.06.2026 gacha.
         </td>
         <td colspan="2" style="text-align: justify; vertical-align: top; border: 1px solid #000;">
             При оплате по кварталам в следующие сроки: <br>
-            - не менее 25%　от установленной суммы абитуриентами, рекомендованными к зачислению, до 15.11.2024, для студентов второго и последующих курсов - до 25.11.2024;<br>
-            - не менее 50% от установленной суммы до 01.01.2025, 75% до 01.04.2025, и 100% до 01.06.2025.
+            - не менее 25%　от установленной суммы абитуриентами, рекомендованными к зачислению, до 15.11.2025, для студентов второго и последующих курсов - до 25.11.2025;<br>
+            - не менее 50% от установленной суммы до 01.01.2026, 75% до 01.04.2026, и 100% до 01.06.2026.
         </td>
     </tr>
 
@@ -758,27 +739,24 @@ $limg = $lqr->writeDataUri();
 
     <tr>
         <td colspan="2" style="text-align: justify; vertical-align: top; border: 1px solid #000; ">
-            7.1 Ta’lim muassasasi: <b>SARBON UNIVERSITETI</b> <br>
-            <b>Manzil:</b> Toshkent shahar, Olmazor tumani, Paxta
-            MFY, Sag'bon ko'chasi, 290-uy. <br>
+            7.1 Ta’lim muassasasi: <b><?= $filial->name_uz ?></b> <br>
+            <b>Manzil:</b> <?= $filial->address_uz ?> <br>
             Bank rekvizitlari:<br>
-            <b>H/R: </b> <?= $hr ?> <br>
-            <b>Bank: </b> <?= $adresUz ?>    <br>
-            <b>Bank kodi (MFO): </b> <?= $mfo ?><br>
-            <b>IFUT (OKED): </b> <?= $oked ?> <br>
-            <b>STIR (INN): </b> <?= $inn ?> <br>
+            <b>H/R: </b> <?= $cons->hr ?> <br>
+            <b>Bank: </b> <?= $cons->bank_name_uz ?>    <br>
+            <b>Bank kodi (MFO): </b> <?= $cons->mfo ?> <br>
+            <b>STIR (INN): </b> <?= $cons->inn ?> <br>
             <b>Telefon: </b> +998 78 888 22 88 <br>
             <img src="<?= $img ?>" width="120px">
         </td>
         <td colspan="2" style="text-align: justify; vertical-align: top; border: 1px solid #000; ">
-            7.1. Образовательное учреждение: <b>SARBON UNIVERSITETI</b> <br>
-            <b>Адрес: </b> г. Ташкент, район Олмазор, махалля Пахта, ул. Сагбон, дом 290. <br>
+            7.1. Образовательное учреждение: <b><?= $filial->name_uz ?></b> <br>
+            <b>Адрес: </b> <?= $filial->address_ru ?> <br>
             Банковские реквизиты:<br>
-            <b>Расчетный счет: </b> <?= $hr ?> <br>
-            <b>Банк:  </b> <?= $adresRu ?>  <br>
-            <b>Код банка (МФО):  </b> <?= $mfo ?><br>
-            <b>ИФУТ (ОКЭД):  </b> <?= $oked ?> <br>
-            <b>ИНН: </b> <?= $inn ?> <br>
+            <b>Расчетный счет: </b> <?= $cons->hr ?> <br>
+            <b>Банк:  </b> <?= $cons->bank_name_ru ?>  <br>
+            <b>Код банка (МФО):  </b> <?= $cons->mfo ?><br>
+            <b>ИНН: </b> <?= $cons->inn ?> <br>
             <b>Тел: </b> +998 78 888 22 88 <br>
             <img src="<?= $limg ?>" width="120px"> <br>
         </td>
