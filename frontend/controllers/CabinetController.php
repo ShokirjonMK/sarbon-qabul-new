@@ -253,7 +253,7 @@ class CabinetController extends Controller
         $errors = [];
         $user = Yii::$app->user->identity;
         $student = $user->student;
-        
+
         $action = '';
         if ($type == 2) {
             $action = 'con2';
