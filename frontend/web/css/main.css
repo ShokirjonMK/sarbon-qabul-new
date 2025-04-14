@@ -6,13 +6,13 @@
     box-sizing: border-box;
 }
 :root {
-    --bg-color: #09588E;
+    --bg-color: #2D5173;
     /*--main-color: #1c89c1;*/
     --main-color2: #244e7a;
-    --main-color: #09588E;
+    --main-color: #2D5173;
     /*--logo-color: #1c89c1;*/
     --logo-color: #1c89c1;
-    --red-color: #8D1E1C;
+    --red-color: #6E0F27;
     --color-text: #001b48;
     --color-label: #787F95;
     --yellow: #25C172;

@@ -399,8 +399,8 @@
     display: block;
     position: relative;
     overflow: hidden;
-    background: rgb(214,39,39);
-    background: linear-gradient(0deg, rgba(214,39,39,1) 0%, rgba(9,88,142,1) 2%);
+    background: #6E0F27;
+    background: linear-gradient(0deg,rgba(110, 15, 39, 1) 0%, rgba(45, 81, 115, 1) 2%);
 }
 
 .mb_head_left img {
