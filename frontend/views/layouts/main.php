@@ -40,6 +40,7 @@ AppAsset::register($this);
 <div class="root">
     <?= $this->render('_header') ; ?>
     <?= $content ?>
+    <?= $this->render('_footer') ; ?>
 </div>
 
 <?php $this->endBody() ?>

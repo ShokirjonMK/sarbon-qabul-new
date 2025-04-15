@@ -693,6 +693,56 @@
 }
 
 
+
+
+.ika_directions {
+    width: 100%;
+    padding: 0 10px;
+}
+.ika_direction_item {
+    background: var(--main-color);
+    border-radius: 5px;
+    padding: 8px 12px;
+    margin-top: 15px;
+}
+.ika_direction_item h6 {
+    margin-top: 3px;
+    color: #fff;
+}
+
+.ika_direction_type {
+    border-top: 1px solid #fff;
+    margin-top: 8px;
+
+}
+.ika_direction_type_item {
+    margin-top: 10px;
+    background: #fff;
+    border-radius: 5px;
+    padding: 3px 5px;
+}
+.ika_direction_lang {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ika_direction_lang p {
+    color: var(--color-text);
+    font-size: 14px;
+}
+.ika_direction_type_item_text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: var(--color-text);
+    margin-bottom: 5px;
+}
+.ika_directions_title {
+    color: var(--color-text);
+    margin-top: 15px;
+}
+
 @media screen and (max-width:1024px) {
     .table {
         border: none;
