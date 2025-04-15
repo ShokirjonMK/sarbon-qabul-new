@@ -13,7 +13,7 @@ return [
     'a10' => 'Toshkent shahar, Yunusobod tumani, Bog’ishamol ko’chasi 220-uy. Joylashuvni ko\'rish uchun bosing!',
     'a11' => 'Qabul tizimi',
     'a12' => 'Ta\'lim yo\'nalishlari',
-    'a13' => '2024 - 2025 o\'quv yili uchun qabul qilinadigan yo\'nalishlar',
+    'a13' => '2025 - 2026 o\'quv yili uchun qabul qilinadigan yo\'nalishlar',
     'a14' => 'ta\'lim',
     'a15' => 'Yo\'nalish nomi',
     'a16' => 'Ta\'lim shakli',
