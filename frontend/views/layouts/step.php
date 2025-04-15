@@ -17,8 +17,8 @@ AppAsset::register($this);
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <?php $this->registerCsrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
-        <link href="/admin/edu-assets/image/home-image/logo.svg" rel="icon">
-        <link href="/admin/edu-assets/image/home-image/logo.svg" rel="apple-touch-icon">
+        <link href="/frontend/web/images/logo_rang.svg" rel="icon">
+        <link href="/frontend/web/images/logo_rang.svg" rel="apple-touch-icon">
         <?php $this->head() ?>
     </head>
     <body>
