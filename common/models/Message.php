@@ -25,8 +25,8 @@ class Message extends \yii\db\ActiveRecord
     public static function sendSms($phone, $text)
     {
         $phone = preg_replace("/[^0-9]/", "", $phone);
-        $email = 'tzubukhara@gmail.com';
-        $password = 'A1wgNalEGTefGmgckgZVgMchP3C1bXh6qwZ6Juv8';
+        $email = 'norbobo1996@gmail.com';
+        $password = 'UknMFbL9gen9oy8JKbibVpBNfrMP1VY6lq0sFuyj';
         $url = 'http://notify.eskiz.uz/api/auth/login';
         $client = new Client();
         $response = $client->createRequest()
@@ -42,7 +42,7 @@ class Message extends \yii\db\ActiveRecord
         $token = $data->token;
         $from = "4546";
         $url = 'http://notify.eskiz.uz/api/message/sms/send';
-        $textNew = "SARBON UNIVERSITETI qabul saytiga ro‘yxatdan o‘tish uchun tasdiqlash kodi: " . $text;
+        $textNew = "SARBON UNIVERSITETI qabul saytiga ro'yxatdan o'tish uchun tasdiqlash kodi: " . $text;
         $response = $client->createRequest()
             ->setFormat(Client::FORMAT_JSON)
             ->setMethod("POST")
