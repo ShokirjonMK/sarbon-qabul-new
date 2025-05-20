@@ -77,11 +77,9 @@ class Passport extends Model
             $student->passport_serial = $this->seria;
             $student->passport_pin = (string)$passport['pinfl'];
 
-            $student->passport_issued_date = date("Y-m-d" , strtotime($passport['expiration_date']));
-            $student->passport_given_date = date("Y-m-d" , strtotime($passport['given_date']));
-            $student->passport_given_by = $passport['given_place'];
+
             $student->birthday = $this->birthday;
-            $student->gender = $passport['gender'];
+            $student->gender = 1;
             if (!$student->validate()){
                 $errors[] = $this->simple_errors($student->errors);
             } else {
